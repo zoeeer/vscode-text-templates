@@ -10,7 +10,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:text-templates.helloWorld"
+    "onCommand:text-templates.helloWorld",
+    "onView:textTemplates"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -19,7 +20,24 @@
         "command": "text-templates.helloWorld",
         "title": "Hello World"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "text-templates",
+          "title": "Text Templates",
+          "icon": "media/edit.svg"
+        }
+      ]
+    },
+    "views": {
+      "text-templates": [
+        {
+          "id": "textTemplates",
+          "name": "Text Templates"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
